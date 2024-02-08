@@ -1,0 +1,9 @@
+[user]
+	name = Derek Swanson
+	email = "118777627+drs0057@users.noreply.github.com"
+[core]
+	editor = code --wait
+	autocrlf = input
+[alias]
+	graph = log --all --graph --decorate --oneline
+	s = status

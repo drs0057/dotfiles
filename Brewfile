@@ -1,0 +1,47 @@
+tap "homebrew/bundle"
+# Shell extension to jump to frequently used directories
+brew "autojump"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# Improved top (interactive process viewer)
+brew "htop"
+# It's not just a linter that annoys you!
+brew "pylint"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Tool to impose load on and stress test a computer system
+brew "stress"
+# Terminal multiplexer
+brew "tmux"
+# Naive linter for English prose
+brew "write-good"
+vscode "colthands.bruta"
+vscode "esbenp.prettier-vscode"
+vscode "github.github-vscode-theme"
+vscode "github.vscode-pull-request-github"
+vscode "larxx.github-blue"
+vscode "ms-python.debugpy"
+vscode "ms-python.isort"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-toolsai.jupyter"
+vscode "ms-toolsai.jupyter-keymap"
+vscode "ms-toolsai.jupyter-renderers"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode "ms-vscode.cmake-tools"
+vscode "ms-vscode.cpptools"
+vscode "ms-vscode.cpptools-extension-pack"
+vscode "ms-vscode.cpptools-themes"
+vscode "mtxr.sqltools"
+vscode "mtxr.sqltools-driver-mysql"
+vscode "redhat.java"
+vscode "twxs.cmake"
+vscode "visualstudioexptteam.intellicode-api-usage-examples"
+vscode "visualstudioexptteam.vscodeintellicode"
+vscode "vscjava.vscode-java-debug"
+vscode "vscjava.vscode-java-dependency"
+vscode "vscjava.vscode-java-pack"
+vscode "vscjava.vscode-java-test"
+vscode "vscjava.vscode-maven"
+vscode "vscodevim.vim"
