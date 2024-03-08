@@ -80,13 +80,17 @@ inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
 
-"Personal additions"
+"Remap kj to <Esc> in insert mode and visual mode" 
 inoremap kj <Esc>
+vnoremap kj <Esc>
 
-call plug#begin('~/.vim/plugged')
+"Make SPACE the leader key"
+nnoremap <SPACE> <Nop>
+map <Space> <Leader>
 
-" Add plugins here, for example:
-Plug 'dense-analysis/ale'
+"Motion
+nnoremap <Leader>v :vsplit<CR>
+nnoremap <Leader>s :split<CR>
 
-call plug#end()
+
 

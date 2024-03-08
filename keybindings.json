@@ -1,0 +1,79 @@
+[
+    {
+        "key": "alt+cmd+n",
+        "command": "python.execInTerminal"
+    },
+
+    // FOCUS MOVEMENTS; USE ctrl + shift (vim-like cardinal movement)
+    // focus to terminal
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.terminal.focus"
+    },
+    // focus to active editor
+    {
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+    // focus to file tree
+    {
+        "key": "ctrl+shift+h",
+        "command": "workbench.explorer.fileView.focus"
+    },
+    // toggle status bar
+    {
+        "key": "ctrl+shift+i",
+        "command": "workbench.action.toggleStatusbarVisibility"
+    },
+
+
+    // TERMINAL; USE cmd
+    // switch between active terminals 
+    {
+        "key": "cmd+a",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "cmd+p",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
+    // open the bottom panel
+    {
+        "key": "cmd+j",
+        "command": "workbench.action.togglePanel",
+    },
+    // create new terminal 
+    {
+        "key": "cmd+n",
+        "command": "workbench.action.terminal.new",
+    },
+    // delete current terminal
+    {
+        "key": "cmd+d",
+        "command": "workbench.action.terminal.kill",
+    },
+
+
+    // FILE TREE
+    // toggle explorer tab
+    {
+        "key": "ctrl+c",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    // make new file
+    {
+        "key": "ctrl+n",
+        "command": "explorer.newFile",
+        "when": "explorerViewletFocus"
+    },
+    // make new directory
+    {
+        "key": "ctrl+shift+n",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus"
+    },
+
+
+]

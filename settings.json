@@ -1,0 +1,92 @@
+{
+  "workbench.colorTheme": "Atom One Dark",
+  "editor.rulers": [80],
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "git.openRepositoryInParentFolders": "always",
+  "sqltools.connections": [
+    {
+      "connectionTimeout": 15,
+      "database": "music",
+      "dialect": "MySQL",
+      "mysqlOptions": {
+        "authProtocol": "xprotocol"
+      },
+      "name": "MySQL_v8",
+      "password": "Tigers-315700",
+      "port": 33060,
+      "previewLimit": 50,
+      "server": "localhost",
+      "username": "root"
+    }
+  ],
+  "sqltools.autoConnectTo": "",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "editor.formatOnPaste": true,
+  "window.zoomLevel": 1,
+  "window.dialogStyle": "custom",
+  "workbench.layoutControl.type": "toggles",
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "workbench.activityBar.location": "top",
+
+  // VIM
+
+  // For relative line numbers, similar to Vim's `set relativenumber`
+  "editor.lineNumbers": "relative",
+
+  // Mimics `set ignorecase` and `set smartcase` for searches
+  "search.smartCase": true,
+
+  // Allow vim to use the system clipboard
+  "vim.useSystemClipboard": true,
+
+  // Keybindings
+  "vim.leader": "<Space>",
+  "vim.normalModeKeyBindings": [
+    // NAVIGATION    
+    // switch between buffer
+    { "before": ["<S-h>"], "commands": ["workbench.action.previousEditor"] },
+    { "before": ["<S-l>"], "commands": ["workbench.action.nextEditor"] },
+
+    // split windows
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s"], "commands": [":split"] },
+    // close window
+    { "before": ["leader", "d"], "commands": ["workbench.action.closeActiveEditor"]},
+
+    // move between panes
+    { 
+      "before": ["leader", "h"], 
+      "commands": ["workbench.action.focusLeftGroup"] 
+    },
+    { 
+      "before": ["leader", "j"], 
+      "commands": ["workbench.action.focusBelowGroup"] 
+    },
+    { 
+      "before": ["leader", "k"], 
+      "commands": ["workbench.action.focusAboveGroup"] 
+    },
+    { 
+      "before": ["leader", "l"], 
+      "commands": ["workbench.action.focusRightGroup"] 
+    },
+
+    // FILE TREE MOVEMENT LOCATED IN keybindings.json
+  ],
+
+  "vim.insertModeKeyBindings": [
+    { "before": ["k", "j"], "after": ["<Esc>"] }
+  ],
+
+  "vim.visualModeKeyBindings": [
+    { "before": ["k", "j"], "after": ["<Esc>"] }
+  ],
+  "workbench.statusBar.visible": false
+
+}

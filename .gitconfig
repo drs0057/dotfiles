@@ -1,8 +1,9 @@
 [user]
 	name = Derek Swanson
 	email = "118777627+drs0057@users.noreply.github.com"
+	signingkey = AB8807A8C383A1938181CE62B293C53A54301BB3
 [core]
-	editor = code --wait
+	editor = vim
 	autocrlf = input
 [alias]
 	graph = log --all --graph --decorate --oneline
