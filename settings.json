@@ -27,7 +27,6 @@
     "editor.defaultFormatter": "vscode.html-language-features"
   },
   "editor.formatOnPaste": true,
-  "window.zoomLevel": 1,
   "window.dialogStyle": "custom",
   "workbench.layoutControl.type": "toggles",
   "editor.minimap.enabled": false,
@@ -35,6 +34,7 @@
   "workbench.activityBar.location": "top",
 
   // VIM
+  "editor.cursorSurroundingLines": 8,
 
   // For relative line numbers, similar to Vim's `set relativenumber`
   "editor.lineNumbers": "relative",
@@ -45,10 +45,16 @@
   // Allow vim to use the system clipboard
   "vim.useSystemClipboard": true,
 
+  // Highlight text after a yank
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "#1b436e",
+  "vim.highlightedyank.duration": 300,
+
   // Keybindings
   "vim.leader": "<Space>",
+
   "vim.normalModeKeyBindings": [
-    // NAVIGATION    
+    // NAVIGATION
     // switch between buffer
     { "before": ["<S-h>"], "commands": ["workbench.action.previousEditor"] },
     { "before": ["<S-l>"], "commands": ["workbench.action.nextEditor"] },
@@ -57,36 +63,111 @@
     { "before": ["leader", "v"], "commands": [":vsplit"] },
     { "before": ["leader", "s"], "commands": [":split"] },
     // close window
-    { "before": ["leader", "d"], "commands": ["workbench.action.closeActiveEditor"]},
+    {
+      "before": ["leader", "d"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
 
     // move between panes
-    { 
-      "before": ["leader", "h"], 
-      "commands": ["workbench.action.focusLeftGroup"] 
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
     },
-    { 
-      "before": ["leader", "j"], 
-      "commands": ["workbench.action.focusBelowGroup"] 
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
     },
-    { 
-      "before": ["leader", "k"], 
-      "commands": ["workbench.action.focusAboveGroup"] 
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
     },
-    { 
-      "before": ["leader", "l"], 
-      "commands": ["workbench.action.focusRightGroup"] 
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
     },
 
-    // FILE TREE MOVEMENT LOCATED IN keybindings.json
+    // WORK W/ DOCUMENTS
+    // save file
+    { "before": ["leader", "w"], "commands": ["workbench.action.files.save"] },
+    // format current document (spacing, indents, etc.)
+    { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
+
+    // LSP (LANGUAGE SERVER PROTOCOL)
+    // go to definition: g + d
+
+    // peek definition
+    {
+      "before": ["g", "p", "d"],
+      "commands": ["editor.action.peekDefinition"]
+    },
+    // show hover
+    {
+      "before": ["g", "h"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+    // go to implementations
+    {
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    // peek implementations
+    {
+      "before": ["g", "p", "i"],
+      "commands": ["editor.action.peekImplementation"]
+    },
+    // quick fix
+    {
+      "before": ["g", "q"],
+      "commands": ["editor.action.quickFix"]
+    },
+    // go to references
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.referenceSearch.trigger"]
+    },
+    // go to type definition
+    {
+      "before": ["g", "t"],
+      "commands": ["editor.action.goToTypeDefinition"]
+    },
+    // peek type definition
+    {
+      "before": ["g", "p", "t"],
+      "commands": ["editor.action.peekTypeDefinition"]
+    },
+    // show hover
+    {
+      "before": ["g", "h"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+
+    // FOCUS ON
+    // focus on file treek
+    {
+      "before": ["leader", "e"],
+      "commands": ["workbench.view.explorer"]
+    },
   ],
 
   "vim.insertModeKeyBindings": [
+    // kj for easy exit to normal mode
     { "before": ["k", "j"], "after": ["<Esc>"] }
   ],
 
   "vim.visualModeKeyBindings": [
-    { "before": ["k", "j"], "after": ["<Esc>"] }
-  ],
-  "workbench.statusBar.visible": false
+    // kj for easy exit to normal mode
+    { "before": ["k", "j"], "after": ["<Esc>"] },
 
+    // stay in visual mode while indenting
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+
+    // move selected lines while staying in visual mode
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+
+    // toggle comment section
+    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+  ],
+  "terminal.integrated.defaultProfile.windows": "Git Bash"
 }
