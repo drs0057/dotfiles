@@ -1,79 +1,205 @@
 [
-    {
-        "key": "alt+cmd+n",
-        "command": "python.execInTerminal"
-    },
+  // toggle status bar
+  {
+    "key": "ctrl+shift+i",
+    "command": "workbench.action.toggleStatusbarVisibility"
+  },
 
-    // FOCUS MOVEMENTS; USE ctrl + shift (vim-like cardinal movement)
-    // focus to terminal
-    {
-        "key": "ctrl+shift+j",
-        "command": "workbench.action.terminal.focus"
-    },
-    // focus to active editor
-    {
-        "key": "ctrl+shift+k",
-        "command": "workbench.action.focusActiveEditorGroup"
-    },
-    // focus to file tree
-    {
-        "key": "ctrl+shift+h",
-        "command": "workbench.explorer.fileView.focus"
-    },
-    // toggle status bar
-    {
-        "key": "ctrl+shift+i",
-        "command": "workbench.action.toggleStatusbarVisibility"
-    },
+  // TERMINAL ---> window: alt | mac: cmd
+  // mac
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.terminal.focus",
+    "when": "isMac"
+  },
+  // close the bottom panel
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.togglePanel",
+    "when": "terminalFocus && isMac"
+  },
+  // focus back on active editor
+  {
+    "key": "cmd+l",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus && isMac"
+  },
+  // next terminal
+  {
+    "key": "cmd+n",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus && isMac"
+  },
+  // previous terminial
+  {
+    "key": "cmd+p",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && isMac"
+  },
+  // add new terminal
+  {
+    "key": "cmd+a",
+    "command": "workbench.action.terminal.new",
+    "when": "isMac"
+  },
+  // delete current terminal
+  {
+    "key": "cmd+d",
+    "command": "workbench.action.terminal.kill",
+    "when": "isMac"
+  },
 
+  // windows
+  // open the bottom panel
+  {
+    "key": "alt+j",
+    "command": "workbench.action.terminal.focus",
+    "when": "isWindows"
+  },
+  // close the bottom panel
+  {
+    "key": "alt+j",
+    "command": "workbench.action.togglePanel",
+    "when": "terminalFocus && isWindows"
+  },
+  // focus back on active editor
+  {
+    "key": "alt+l",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus && isWindows"
+  },
+  // next terminal
+  {
+    "key": "alt+n",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus && isWindows"
+  },
+  // previous terminial
+  {
+    "key": "alt+p",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && isWindows"
+  },
+  // add new terminal
+  {
+    "key": "alt+a",
+    "command": "workbench.action.terminal.new",
+    "when": "isWindows"
+  },
+  // delete current terminal
+  {
+    "key": "alt+d",
+    "command": "workbench.action.terminal.kill",
+    "when": "isWindows"
+  },
 
-    // TERMINAL; USE cmd
-    // switch between active terminals 
-    {
-        "key": "cmd+a",
-        "command": "workbench.action.terminal.focusNext",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "cmd+p",
-        "command": "workbench.action.terminal.focusPrevious",
-        "when": "terminalFocus"
-    },
-    // open the bottom panel
-    {
-        "key": "cmd+j",
-        "command": "workbench.action.togglePanel",
-    },
-    // create new terminal 
-    {
-        "key": "cmd+n",
-        "command": "workbench.action.terminal.new",
-    },
-    // delete current terminal
-    {
-        "key": "cmd+d",
-        "command": "workbench.action.terminal.kill",
-    },
+  // FILE TREE
+  // file tree is opened using vim "leader + e"
+  // close explorer tab
+  {
+    "key": "space e",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "filesExplorerFocus"
+  },
+  // new file
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // new folder
+  {
+    "key": "f",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // rename item
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // cut item
+  {
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // copy item
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  // paste item
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  // focus back to active editor
+  {
+    "key": "space l",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
 
+  // NAVIGATE HOVER WINDOW
+  {
+    "key": "h",
+    "command": "editor.action.scrollLeftHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "j",
+    "command": "editor.action.scrollDownHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "k",
+    "command": "editor.action.scrollUpHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "l",
+    "command": "editor.action.scrollRightHover",
+    "when": "editorHoverFocused"
+  },
 
-    // FILE TREE
-    // toggle explorer tab
-    {
-        "key": "ctrl+c",
-        "command": "workbench.action.toggleSidebarVisibility"
-    },
-    // make new file
-    {
-        "key": "ctrl+n",
-        "command": "explorer.newFile",
-        "when": "explorerViewletFocus"
-    },
-    // make new directory
-    {
-        "key": "ctrl+shift+n",
-        "command": "explorer.newFolder",
-        "when": "explorerViewletFocus"
-    },
+  // NAVIGATE QUICK OPEN WINDOW (file searching, etc.) ---> ctrl
+  // open window
+  {
+    "key": "ctrl+f",
+    "command": "workbench.action.quickOpen",
+    "when": "!inQuickOpen"
+  },
+  // close window
+  {
+    "key": "ctrl+f",
+    "command": "workbench.action.closeQuickOpen",
+    "when": "inQuickOpen"
+  },
+  // scrollling
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
 
-
+  // NAVIGATE AUTOCOMPLETE WINDOW
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetVisible"
+  },
 ]
