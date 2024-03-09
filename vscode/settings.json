@@ -141,8 +141,8 @@
       "commands": ["editor.action.showDefinitionPreviewHover"]
     },
 
-    // FOCUS ON
-    // focus on file treek
+    // FOCUSING
+    // focus on file tree
     {
       "before": ["leader", "e"],
       "commands": ["workbench.view.explorer"]
@@ -169,5 +169,6 @@
     // toggle comment section
     { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
   ],
-  "terminal.integrated.defaultProfile.windows": "Git Bash"
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "workbench.statusBar.visible": false
 }

@@ -101,6 +101,13 @@
     "command": "workbench.action.toggleSidebarVisibility",
     "when": "filesExplorerFocus"
   },
+  // interact with objects
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "filesExplorerFocus"
+  },
+
   // new file
   {
     "key": "a",
