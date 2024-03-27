@@ -1,10 +1,14 @@
 {
   "workbench.colorTheme": "Atom One Dark",
-  "editor.rulers": [80],
+  "editor.rulers": [79],
   "[python]": {
-    "editor.formatOnType": true
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.black-formatter"
   },
+  "black-formatter.args": ["--line-length", "79"],
+  "editor.formatOnSave": true,
   "git.openRepositoryInParentFolders": "always",
+
   "sqltools.connections": [
     {
       "connectionTimeout": 15,
@@ -26,7 +30,6 @@
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
-  "editor.formatOnPaste": true,
   "window.dialogStyle": "custom",
   "workbench.layoutControl.type": "toggles",
   "editor.minimap.enabled": false,
@@ -146,7 +149,7 @@
     {
       "before": ["leader", "e"],
       "commands": ["workbench.view.explorer"]
-    },
+    }
   ],
 
   "vim.insertModeKeyBindings": [
@@ -170,5 +173,6 @@
     { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
   ],
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "workbench.statusBar.visible": false
+  // Make timeout small
+  "vim.timeout": 100
 }

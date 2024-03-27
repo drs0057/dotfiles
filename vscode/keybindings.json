@@ -1,4 +1,10 @@
 [
+  // Remap shift + space to _
+  {
+    "key": "shift+space",
+    "command": "type",
+    "args": { "text": "_" }
+  },
   // toggle status bar
   {
     "key": "ctrl+shift+i",
@@ -52,43 +58,43 @@
   // windows
   // open the bottom panel
   {
-    "key": "alt+j",
+    "key": "ctrl+shift+j",
     "command": "workbench.action.terminal.focus",
     "when": "isWindows"
   },
   // close the bottom panel
   {
-    "key": "alt+j",
+    "key": "ctrl+shift+j",
     "command": "workbench.action.togglePanel",
     "when": "terminalFocus && isWindows"
   },
   // focus back on active editor
   {
-    "key": "alt+l",
+    "key": "ctrl+shift+l",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "terminalFocus && isWindows"
   },
   // next terminal
   {
-    "key": "alt+n",
+    "key": "ctrl+shift+n",
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus && isWindows"
   },
   // previous terminial
   {
-    "key": "alt+p",
+    "key": "ctrl+shift+p",
     "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus && isWindows"
   },
   // add new terminal
   {
-    "key": "alt+a",
+    "key": "ctrl+shift+a",
     "command": "workbench.action.terminal.new",
     "when": "isWindows"
   },
   // delete current terminal
   {
-    "key": "alt+d",
+    "key": "ctrl+shift+d",
     "command": "workbench.action.terminal.kill",
     "when": "isWindows"
   },
@@ -101,13 +107,6 @@
     "command": "workbench.action.toggleSidebarVisibility",
     "when": "filesExplorerFocus"
   },
-  // interact with objects
-  {
-    "key": "enter",
-    "command": "list.select",
-    "when": "filesExplorerFocus"
-  },
-
   // new file
   {
     "key": "a",
@@ -208,5 +207,5 @@
     "key": "ctrl+k",
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetVisible"
-  },
+  }
 ]
